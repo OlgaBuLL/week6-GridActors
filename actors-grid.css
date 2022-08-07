@@ -1,0 +1,90 @@
+img {
+  float: left;
+  width: 150px;
+  height: 200px;
+  margin: 1rem;
+}
+
+.gridcontainer {
+  display: grid;
+  width: 100vw;
+  height: 100%;
+  grid-template-rows: 10% 1fr 1fr 1fr 20%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "header header header header"
+    "actors actors actors sidebar"
+    "section1  section2 sidebar"
+    "section3 section3 section3 sidebar"
+    "footer footer footer footer";
+}
+
+.header,
+footer {
+  background: rgba(28, 46, 80, 0.5);
+  grid-area: header footer;
+  width: 100%;
+  grid-column: 1/5;
+  text-align: center;
+}
+
+h1,
+h3 {
+  text-align: center;
+}
+
+article {
+  padding: 1rem;
+}
+
+.actors {
+  grid-column: 1/4;
+}
+
+.main {
+  background-color: rgb(250, 250, 179);
+  display: grid;
+  grid-area: main;
+
+  grid-row: 2/5;
+  grid-column: 1/4;
+  grid-gap: 1rem;
+  text-align: justify;
+}
+
+.section1 {
+  background: rgb(206, 213, 236);
+  grid-area: section1;
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.section2 {
+  background: rgb(206, 213, 236);
+  grid-area: section2;
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
+
+.section3 {
+  background: rgb(206, 213, 236);
+  grid-area: section3;
+  grid-row: 4/5;
+  grid-column: 1/4;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.sidebar {
+  background: rgba(28, 46, 80, 0.2);
+  grid-area: sidebar;
+  grid-row: 2/5;
+  grid-column: 4/5;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: 5/6;
+  justify-content: space-around;
+}
